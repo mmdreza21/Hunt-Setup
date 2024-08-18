@@ -1,21 +1,11 @@
 # Server Setup Script
 
-This repository contains a comprehensive server setup script designed to streamline the installation and configuration of essential packages and tools for bug bounty hunting and penetration testing on major Linux distributions, including Ubuntu, CentOS, Fedora.
+This repository contains a comprehensive server setup script designed to streamline the installation and configuration of essential packages and tools for bug bounty hunting and penetration testing.
 
-## Features
-
-- Automatically detects the operating system and installs packages accordingly
-- Installs essential tools and libraries such as Vim, Git, Docker, Nginx, MySQL, PHP, and more
-- Installs tools from source, including massdns, masscan, waymore, and others
-- Installs Rust and various Rust-based tools
-- Installs Go and various Go-based tools
-- Configures Cloudflare Warp
 
 ## Supported Distributions
 
 - Ubuntu
-- CentOS
-- Fedora
 
 ## Usage
 
@@ -34,20 +24,6 @@ This repository contains a comprehensive server setup script designed to streaml
     ```bash
     sudo ./setup.sh
     ```
-
-## Script Details
-
-### Operating System Detection
-
-The script automatically detects the operating system using `/etc/os-release` and runs the appropriate package installation commands for the detected OS.
-
-### Tools Installation
-
-For a detailed list of tools that are installed, please refer to the [TOOLS.md](TOOLS.md) file.
-
-## Customization
-
-You can customize the script to add or remove packages and tools as needed. The functions for installing packages and tools are modular, making it easy to modify for your specific requirements.
 
 ## Contributing
 
