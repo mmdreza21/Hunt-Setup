@@ -8,7 +8,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 install_packages_ubuntu() {
-    echo -e "Installing Packages on Ubuntu..."
+    echo -e "${GREEN}Installing Packages on Ubuntu...${NC}"
     
     sudo apt install -y vim curl zsh git gcc net-tools ruby ruby-dev tmux build-essential postgresql make python3-apt bind9 certbot python3-certbot-nginx libssl-dev zip unzip jq nginx pkg-config mysql-server php php-curl php-fpm php-mysql dnsutils whois python3-pip ca-certificates gnupg tmux nmap libpcap-dev
 }
@@ -35,7 +35,7 @@ install_tool() {
 }
 
 install_tools_from_source() {
-    echo -e "[+] Installing Tools from source..."
+    echo -e "${GREEN}[+] Installing Tools from source...${NC}"
     mkdir -p Tools && cd Tools
 
     install_tool https://github.com/blechschmidt/massdns.git "make && sudo make install"
@@ -59,7 +59,7 @@ install_go() {
     GO_VERSION=$(get_latest_go_version)
 
     if [[ -z "$GO_VERSION" ]]; then
-        echo -e "Failed to fetch the latest Go version. Aborting."
+        echo -e "${RED}Failed to fetch the latest Go version. Aborting.${NC}"
         exit 1
     fi
 
@@ -79,9 +79,9 @@ install_go() {
         install_go_package() {
             package=$1
             if go install $package &> /dev/null; then
-                echo -e "[+] Successfully installed $package"
+                echo -e "${GREEN}[+] Successfully installed $package${NC}"
             else
-                echo -e "[-] Failed to install $package"
+                echo -e "${RED}[-] Failed to install $package${NC}"
             fi
         }
 
@@ -130,4 +130,4 @@ install_go
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo -e "FINISHED!!!!!"
+echo -e "${GREEN}FINISHED!!!!!${NC}"
