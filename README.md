@@ -11,7 +11,7 @@ This repository contains a comprehensive server setup script designed to streaml
 
 1. Clone this repository to your server:
     ```bash
-    git clone https://github.com/jamaledim/Hunt-Setup.git
+    git clone https://github.com/OoS-MaMaD/Hunt-Setup.git
     cd Hunt-Setup
     ```
 
@@ -24,8 +24,7 @@ This repository contains a comprehensive server setup script designed to streaml
     ```bash
     sudo ./setup.sh
     ```
-4. After installation:
-   add these to your zshrc or bashrc profile:
+4. After installation, add these to your zshrc or bashrc profile
    ```bash
    unalias gau    # only if your using zsh
    export PATH=$PATH:/usr/local/go/bin
