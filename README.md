@@ -24,6 +24,14 @@ This repository contains a comprehensive server setup script designed to streaml
     ```bash
     sudo ./setup.sh
     ```
+4. After installation:
+   add these to your zshrc or bashrc profile:
+   ```bash
+   unalias gau    # only if your using zsh
+   export PATH=$PATH:/usr/local/go/bin
+   export GOPATH=$HOME/go
+   export PATH=$PATH:$GOPATH/bin
+   ```
 
 ## Contributing
 
