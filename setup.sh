@@ -10,7 +10,7 @@ NC='\033[0m'
 install_packages_ubuntu() {
     echo -e "${GREEN}Installing Packages on Ubuntu...${NC}"
     
-    sudo apt install -y vim curl zsh git gcc net-tools ruby ruby-dev tmux build-essential postgresql make python3-apt bind9 certbot python3-certbot-nginx libssl-dev zip unzip jq nginx pkg-config mysql-server php php-curl php-fpm php-mysql dnsutils whois python3-pip ca-certificates gnupg tmux nmap libpcap-dev
+    sudo apt install -y vim curl zsh git gcc net-tools ruby ruby-dev build-essential postgresql make python3-apt bind9 certbot python3-certbot-nginx libssl-dev zip unzip jq nginx pkg-config mysql-server php php-curl php-fpm php-mysql dnsutils whois python3-pip ca-certificates gnupg tmux nmap libpcap-dev
 }
 
 install_rust() {
@@ -75,7 +75,7 @@ install_go() {
     rm "${GO_VERSION}.linux-amd64.tar.gz"
 
     if go version &> /dev/null; then
-        echo -e "[+] Installing go tools..."
+        echo -e "${GREEN}[+] Installing go tools...${NC}"
         install_go_package() {
             package=$1
             if go install $package &> /dev/null; then
@@ -118,7 +118,6 @@ install_go() {
         install_go_package github.com/ImAyrix/fallparams@latest
         install_go_package github.com/glitchedgitz/cook/v2/cmd/cook@latest
         install_go_package github.com/BishopFox/sj@latest
-        install_go_package github.com/sw33tLie/sns@latest
         install_tool https://github.com/assetnote/kiterunner.git "make build && ln -s $(pwd)/Tools/kiterunner/dist/kr /usr/local/bin/kr" 
     fi
 }
